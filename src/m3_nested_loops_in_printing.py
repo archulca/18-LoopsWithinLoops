@@ -209,7 +209,7 @@ def alternating_brackets(m, n):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-    for k in range (n):
+    for k in range (n+2):
         for j in range (m-k):
             if j % 2 ==0:
                 print('[',end='')
