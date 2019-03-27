@@ -80,9 +80,39 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    y0 = circle.center.y
+    x0 = circle.center.x
+    x = circle.center.x
+    y = circle.center.y
+    delta = 2*circle.radius
+    color = circle.fill_color
+    for _ in range (3):
+        for k in range(r):
+            circle = rg.Circle(rg.Point(x,y),circle.radius)
+            circle.fill_color = color
+            circle.attach_to(window)
+            window.render(0.1)
+            y = y + delta
+        x = x + delta
+        y = y0
+
+    x = 3*delta + x0
+    y = (r-3)*delta + y0
+
+    for _ in range(3):
+        for k in range (c):
+            circle = rg.Circle(rg.Point(x,y), circle.radius)
+            circle.fill_color = color
+            circle.attach_to(window)
+            window.render(0.1)
+            x = x + delta
+        y = y + delta
+        x = 3*delta + x0
+
+
 
 
 def run_test_draw_wall_on_right():
@@ -121,9 +151,26 @@ def draw_wall_on_right(rectangle, n, window):
     and n is a small, positive integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    corner1x = rectangle.corner_1.x
+    corner1y = rectangle.corner_1.y
+    corner2x = rectangle.corner_2.x
+    corner2y = rectangle.corner_2.y
+    width = corner1x - corner2x
+    height = corner1y - corner2y
+    for k in range (n):
+        for j in range (k+1):
+            new = rg.Rectangle(rg.Point(corner1x,corner1y),rg.Point(corner2x,corner2y))
+            new.attach_to(window)
+            window.render(0.1)
+            corner1x = corner1x + width
+            corner2x = corner2x + width
+        corner1x = rectangle.corner_1.x
+        corner2x = rectangle.corner_2.x
+        corner1y = corner1y - height
+        corner2y = corner2y - height
 
 
 # ----------------------------------------------------------------------
