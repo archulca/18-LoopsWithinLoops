@@ -165,7 +165,7 @@ def decreasing_exclamation_marks(m, n):
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
     for k in range (m):
-        for j in range(n-k):
+        for j in range(m-k):
             print('!', end='')
         print()
 
