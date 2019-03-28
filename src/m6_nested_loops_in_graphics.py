@@ -90,7 +90,7 @@ def draw_L(window, circle, r, c):
     delta = 2*circle.radius
     color = circle.fill_color
     for _ in range (3):
-        for k in range(r):
+        for k in range(r+3):
             circle = rg.Circle(rg.Point(x,y),circle.radius)
             circle.fill_color = color
             circle.attach_to(window)
@@ -100,7 +100,7 @@ def draw_L(window, circle, r, c):
         y = y0
 
     x = 3*delta + x0
-    y = (r-3)*delta + y0
+    y = (r)*delta + y0
 
     for _ in range(3):
         for k in range (c):
